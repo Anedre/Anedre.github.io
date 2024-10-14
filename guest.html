@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Invitado</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- Material Icons -->
+    <style>
+        /* Estilos adicionales para la barra superior */
+        .navbar-custom {
+            background-color: #28a745; /* Color verde */
+        }
+        .navbar-brand, .nav-link {
+            color: white; /* Color del texto */
+        }
+        .navbar-toggler {
+            border-color: white; /* Color del borde del botón de navegación */
+        }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30' fill='white'%3E%3Cpath stroke='white' stroke-width='2' d='M 2 7 L 28 7 M 2 15 L 28 15 M 2 23 L 28 23'/%3E%3C/svg%3E");
+        }
+        /* Estilos para los cuadros de los cursos */
+        .course-card {
+            border: none; /* Sin borde */
+            border-radius: 10px; /* Bordes redondeados */
+            overflow: hidden; /* Para mantener el contenido dentro del cuadro */
+            transition: transform 0.3s; /* Transición para el efecto 3D */
+            position: relative; /* Posición relativa para el icono de ingreso */
+            margin-bottom: 20px; /* Espacio entre cada tarjeta */
+        }
+        .course-card:hover {
+            transform: translateY(-5px); /* Efecto 3D al pasar el mouse */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+        }
+        .course-image {
+            max-height: 150px; /* Altura máxima de la imagen */
+            width: 100%; /* Ancho completo del cuadro */
+            object-fit: cover; /* Ajustar la imagen al cuadro */
+        }
+        .course-title {
+            padding: 10px; /* Espaciado interno */
+        }
+        .arrow-icon {
+            position: absolute; /* Posición absoluta para colocar la flecha */
+            bottom: 10px; /* Espaciado desde abajo */
+            right: 10px; /* Espaciado desde la derecha */
+            font-size: 30px; /* Tamaño del icono */
+            opacity: 0; /* Inicialmente invisible */
+            transition: opacity 0.3s; /* Transición suave para la opacidad */
+        }
+        .course-card:hover .arrow-icon {
+            opacity: 1; /* Mostrar flecha al pasar el mouse */
+        }
+        /* Estilo para la lista de recomendaciones */
+        .recommendations {
+            text-align: left; /* Alinear texto a la izquierda */
+            margin-left: 20px; /* Margen izquierdo */
+            margin-top: 20px; /* Margen superior */
+        }
+        /* Estilos para el botón de salir */
+        .btn-exit {
+            background-color: red; /* Color rojo */
+            color: white; /* Color del texto */
+            border: none; /* Sin borde */
+            border-radius: 5px; /* Bordes redondeados */
+            padding: 10px 20px; /* Espaciado interno */
+            font-size: 16px; /* Tamaño de la fuente */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el efecto 3D */
+            transition: transform 0.3s, box-shadow 0.3s; /* Transiciones para el efecto 3D */
+        }
+        .btn-exit:hover {
+            transform: translateY(-3px); /* Efecto 3D al pasar el mouse */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada al pasar el mouse */
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <!-- Barra Superior -->
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <span class="navbar-brand">Perfil: Invitado</span> <!-- Perfil a la izquierda -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="guest.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="perfil.html">Perfil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="cursos.html">Cursos y Talleres</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="configuracion.html">Configuración</a>
+                    </li>
+                </ul>
+            </div>
+            <span class="navbar-text ml-auto">
+                <button class="btn btn-exit" onclick="location.href='index.html'">Salir</button> <!-- Botón de salir a la derecha -->
+            </span>
+        </nav>
+
+        <!-- Contenido Principal -->
+        <div class="text-center main-content mt-4"> <!-- Clase para el margen superior -->
+            <h1>Bienvenido, Invitado</h1>
+            <p>Aquí puedes acceder a diferentes secciones de la plataforma.</p>
+
+            <!-- Sección de Recomendaciones -->
+            <h2>Recomendaciones</h2>
+            <ul class="list-unstyled recommendations"> <!-- Lista de recomendaciones alineada a la izquierda -->
+                <!-- Item de curso 1 -->
+                <li>
+                    <div class="card course-card">
+                        <img src="images/matematica.jpeg" alt="Matemáticas" class="course-image">
+                        <div class="course-title">
+                            <h5>Matemáticas</h5>
+                        </div>
+                        <span class="material-icons arrow-icon">arrow_forward</span> <!-- Icono de flecha -->
+                    </div>
+                </li>
+                <!-- Item de curso 2 -->
+                <li>
+                    <div class="card course-card">
+                        <img src="images/comunicacion.jpeg" alt="Comunicación" class="course-image">
+                        <div class="course-title">
+                            <h5>Comunicación</h5>
+                        </div>
+                        <span class="material-icons arrow-icon">arrow_forward</span> <!-- Icono de flecha -->
+                    </div>
+                </li>
+                <!-- Item de curso 3 -->
+                <li>
+                    <div class="card course-card">
+                        <img src="images/ingles.jpeg" alt="Inglés" class="course-image">
+                        <div class="course-title">
+                            <h5>Inglés</h5>
+                        </div>
+                        <span class="material-icons arrow-icon">arrow_forward</span> <!-- Icono de flecha -->
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (opcional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
